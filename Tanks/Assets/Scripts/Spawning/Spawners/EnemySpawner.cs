@@ -16,7 +16,7 @@ namespace Scripts.Spawning
 
         private int maxEnemyCount = 10;
 
-        public EnemySpawner(GenericPool<EnemyBase> _enemyPool, List<Transform> _spawnPos, Transform _enemyHolder ,MonoBehaviour _mono ,params EnemyBase[] _enemies)
+        public EnemySpawner(GenericPool<EnemyBase> _enemyPool, List<Transform> _spawnPos, Transform _enemyHolder ,MonoBehaviour _mono , EnemyBase[] _enemies)
         {
             enemyPool = _enemyPool;
             spawnPos = _spawnPos;
