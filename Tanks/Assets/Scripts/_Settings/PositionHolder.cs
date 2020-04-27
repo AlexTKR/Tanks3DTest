@@ -2,7 +2,7 @@
 
 namespace Scripts.Settings
 {
-    [CreateAssetMenu(menuName = "Holder/Possition", fileName = "Data")]
+    [CreateAssetMenu(menuName = "Holder/PossitionAndOffset", fileName = "Data")]
     public class PositionHolder : ScriptableObject
     {
         [SerializeField] private Vector3 value;
