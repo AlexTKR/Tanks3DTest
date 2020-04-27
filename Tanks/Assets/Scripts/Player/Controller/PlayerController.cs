@@ -3,6 +3,7 @@ using Scripts.Player.InputReaders;
 using Scripts.Player.Movement;
 using Scripts.Player.Weapons;
 using Scripts.Player.Attacking;
+using Scripts.Player.HealthSystem;
 using Scripts.Settings; 
 
 namespace Scripts.Player.Controller
@@ -12,13 +13,15 @@ namespace Scripts.Player.Controller
         [SerializeField] private PlayerSettings playerSettings;
         [SerializeField] private PositionHolder positionHolder;
         [SerializeField] private WeaponSystemBase weaponSystem;
+        [SerializeField] private healthSystemBase playersHealth;
 
         private IInputReader inputReader;
         private IMovement playerMovement;
         private IAttack playerAttack;
       
         private void Awake()
-        {            
+        {
+            playersHealth.Initiate();
             InitiateInputReader();
             InitiatePlayerMovement();
             InitiateAttack();
@@ -29,14 +32,19 @@ namespace Scripts.Player.Controller
             inputReader?.Read();
         }
 
-        private void OnDisable()
-        {
-            positionHolder.Value = Vector3.zero;
-        }
-
         private void FixedUpdate()
         {
             playerMovement?.Tick();
+        }
+
+        private void LateUpdate()
+        {
+            playersHealth.Tick();
+        }
+
+        private void OnDisable()
+        {
+            positionHolder.Value = Vector3.zero;
         }
 
         private void InitiateInputReader()

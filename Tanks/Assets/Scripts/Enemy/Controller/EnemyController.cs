@@ -26,7 +26,6 @@ namespace Scripts.Enemy.Controller
         private void Update()
         {
             enemyMovement.Tick();
-            Debug.Log(enemySettingsCopy.Health);
         }
 
         public void TakeDamage(float damage)
