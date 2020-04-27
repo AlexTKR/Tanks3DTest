@@ -7,9 +7,7 @@ namespace Scripts.Spawning.Controller
 {
     public class EnemySpawnController : MonoBehaviour
     {
-        [SerializeField] private EnemyBase enemyOne;
-        [SerializeField] private EnemyBase enemyTwo;
-        [SerializeField] private EnemyBase enemyThree;
+        [SerializeField] private EnemyBase[] enemies;
 
         [SerializeField] private List<Transform> spawnPos;
         [SerializeField] private Transform enemyHolder;
@@ -39,7 +37,7 @@ namespace Scripts.Spawning.Controller
 
         private void InitiateSpawner()
         {
-            enemySpawner = new EnemySpawner(enemyPool, spawnPos , enemyHolder , this ,enemyOne, enemyTwo, enemyThree);
+            enemySpawner = new EnemySpawner(enemyPool, spawnPos , enemyHolder , this , enemies);
         }
     }
 }
