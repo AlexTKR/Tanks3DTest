@@ -15,5 +15,9 @@ namespace Scripts.Enemy.Controller
         {
             enemyPool = _enemyPool;
         }
+
+        public abstract void ReturnToThePool();
+        public abstract void Initiate();
+        public abstract void RestoreEnemy();
     }
 }

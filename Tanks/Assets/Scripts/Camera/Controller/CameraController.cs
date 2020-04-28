@@ -8,12 +8,14 @@ namespace Scripts.Camera.Controller
     {
         [SerializeField] PositionHolder positionHolder;
         [SerializeField] PositionHolder cameraOffset;
+        [SerializeField] CameraTransformHolder cameraTransform;
 
         private IMovement cameraMovement;
 
         private void Awake()
         {
             InitializeCameraMovement();
+            SetTransform();
         }
 
         void FixedUpdate()
@@ -24,6 +26,11 @@ namespace Scripts.Camera.Controller
         private void InitializeCameraMovement()
         {
             cameraMovement = new CameraMovement(positionHolder, cameraOffset, transform);
+        }
+
+        private void SetTransform()
+        {
+            cameraTransform.CameraTransform = transform;
         }
     }
 }

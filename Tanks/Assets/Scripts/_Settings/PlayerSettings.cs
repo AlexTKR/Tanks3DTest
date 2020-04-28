@@ -10,7 +10,7 @@ namespace Scripts.Settings
         [SerializeField] private float movingSpeed;
         [SerializeField] private float turningSpeed;
 
-        public float Health => healthBuffer;
+        public float Health { get => healthBuffer; set => healthBuffer = value; }
         public float Defence => defence;
         public float MovingSpeed => movingSpeed;
         public float TurningSpeed => turningSpeed;

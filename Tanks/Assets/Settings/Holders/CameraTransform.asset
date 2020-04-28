@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef5f53702dabe6a4e83f1448f32c1526, type: 3}
-  m_Name: RedEnemySettings
+  m_Script: {fileID: 11500000, guid: c6a41015c464bbc44a3373300216abb3, type: 3}
+  m_Name: CameraTransform
   m_EditorClassIdentifier: 
-  health: 50
-  damage: 10
-  defence: 0.8
-  movingSpeed: 8

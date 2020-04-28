@@ -10,6 +10,7 @@ namespace Scripts.Enemy.Movement
         private PositionHolder targetPosition;
         private Transform transform;
         private NavMeshAgent agent;
+        private Vector3 offset = new Vector3(1.5f, 0, 1.5f);
 
         public EnemyMovement(EnemySettings _enemySettings, PositionHolder  _targetPosition, Transform _transform, NavMeshAgent _agent)
         {
@@ -31,7 +32,7 @@ namespace Scripts.Enemy.Movement
             if (distance > agent.stoppingDistance)
             {
                 agent.isStopped = false;
-                agent.SetDestination(targetPosition.Value);
+                agent.SetDestination(targetPosition.Value + offset);
             }
             else
             {

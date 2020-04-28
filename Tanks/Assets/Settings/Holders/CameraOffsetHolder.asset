@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7c5e5af3267254db0f1a22cd2f6d9c, type: 3}
   m_Name: CameraOffsetHolder
   m_EditorClassIdentifier: 
-  value: {x: 0, y: 0, z: -26.07}
+  value: {x: 0, y: 0, z: -15}

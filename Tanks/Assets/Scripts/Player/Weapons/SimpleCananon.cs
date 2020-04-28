@@ -35,11 +35,22 @@ namespace Scripts.Player.Weapons
             }
         }
 
+        public override void Enable()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public override void Disable()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void PreSpawnShells(int count)
         {
             for (int i = 0; i < count; i++)
             {
                 ShellBase newShell = Instantiate(shell, shellHolder.transform.position, Quaternion.identity);
+                newShell.InjectPool(shellPool);
                 newShell.gameObject.SetActive(false);
                 newShell.transform.SetParent(shellHolder);
                 newShell.SetDamageAmount(weaponSettings.Damage);

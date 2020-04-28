@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af6972cccece8c46b2f8f76e52a5d74, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  health: 15.9
-  defence: 0
+  health: 350
+  defence: 0.1
   movingSpeed: 10
   turningSpeed: 100

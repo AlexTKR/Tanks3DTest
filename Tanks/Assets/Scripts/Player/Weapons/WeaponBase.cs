@@ -8,6 +8,8 @@ namespace Scripts.Player.Weapons
         [SerializeField] protected WeaponSettings weaponSettings;
 
         public abstract void Initiate();
+        public abstract void Enable();
+        public abstract void Disable();
         public abstract void Attack();
     }
 }
