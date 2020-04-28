@@ -36,7 +36,7 @@ namespace Scripts.Enemy.Attack
         {
             while (true)
             {
-                Collider[] hits = Physics.OverlapBox(transform.position, transform.localScale * 1.2f, Quaternion.identity, 1 << playerLayer);
+                Collider[] hits = Physics.OverlapBox(transform.position, transform.localScale * 1.4f, Quaternion.identity, 1 << playerLayer);
                 foreach (var hit in hits)
                 {
                     playerSettings.Health = playerSettings.Health - enemySettings.Damage * playerSettings.Defence;
