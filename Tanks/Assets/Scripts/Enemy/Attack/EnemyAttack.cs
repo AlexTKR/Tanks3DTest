@@ -35,7 +35,6 @@ namespace Scripts.Enemy.Attack
                 {
                     playerSettings.Health = playerSettings.Health - enemySettings.Damage * playerSettings.Defence;
                     yield return null;
-                    Debug.Log(playerSettings.Health);
                 }
 
                 yield return new WaitForSeconds(attackCoolDown);

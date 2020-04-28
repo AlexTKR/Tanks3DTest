@@ -19,7 +19,18 @@ namespace Scripts.Enemy.HealthSystem
 
         public override void Tick()
         {
+            SetHealth();
+            LookAtCamera();
+        }
+
+        private void SetHealth()
+        {
             healthSlider.value = Mathf.Clamp(enemySettings.Health, 0, healthSlider.maxValue);
+        }
+
+        private void LookAtCamera()
+        {
+            transform.LookAt(cameraTransform.CameraTransform);
         }
     }
 }

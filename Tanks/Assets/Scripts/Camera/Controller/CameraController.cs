@@ -21,6 +21,7 @@ namespace Scripts.Camera.Controller
         void FixedUpdate()
         {
             cameraMovement?.Tick();
+            Debug.Log(cameraTransform.CameraTransform.position);
         }
 
         private void InitializeCameraMovement()

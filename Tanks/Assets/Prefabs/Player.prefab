@@ -1209,6 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 6988761733001736719}
+  cameraTransform: {fileID: 11400000, guid: b65bdfc1f12b1384d9a8b3c9c3e99a98, type: 2}
   playerSettings: {fileID: 11400000, guid: 13d5a8f3973ec0e4fb31b8764a9560d5, type: 2}
 --- !u!1 &8935338893042549041
 GameObject:

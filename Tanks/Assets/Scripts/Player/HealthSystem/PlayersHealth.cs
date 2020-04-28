@@ -14,7 +14,18 @@ namespace Scripts.Player.HealthSystem
 
         public override void Tick()
         {
-            healthSlider.value = Mathf.Clamp(playerSettings.Health, 0, healthSlider.maxValue);            
+            SetHealth();
+            LookAtCamera();
+        }
+
+        private void LookAtCamera()
+        {
+            transform.LookAt(cameraTransform.CameraTransform);
+        }
+
+        private void SetHealth()
+        {
+            healthSlider.value = Mathf.Clamp(playerSettings.Health, 0, healthSlider.maxValue);
         }
     }
 }
