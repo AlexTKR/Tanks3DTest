@@ -4,6 +4,6 @@ namespace Scripts.Enemy.HealthListener
 {
     public interface IListener
     {
-        void Tick();
+        void Listen();
     }
 }

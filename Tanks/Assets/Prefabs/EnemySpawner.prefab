@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 7466757892977291085, guid: 918983407d158fb42a4cf9f1b5434c52, type: 3}
+  - {fileID: 635820881918133483, guid: 5fc8f6fcb607c964daaffa76d4e26fc2, type: 3}
+  - {fileID: 812818531160025545, guid: cb030b5e8424c154780d037685f19a44, type: 3}
   spawnPos:
   - {fileID: 7722613896764550493}
   - {fileID: 7722613896962193844}
@@ -186,7 +188,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7722613897008147131
 Transform:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 {
     public interface IAttack
     {
-        void Attack();
+        void StartAttacking();
+        void StopAttacking();
     }
 }

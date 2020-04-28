@@ -15,16 +15,11 @@ namespace Scripts.Enemy.HealthListener
             enemy = _enemy;
         }
 
-        public void Tick()
-        {
-            Listen();
-        }
-
-        private void Listen()
+        public void Listen()
         {
             if (enemySettings.Health <= 0)
             {
-                enemy.ReturnToThePool();
+                enemy.ReturnToThePool();              
             }
         }
     }

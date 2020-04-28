@@ -21,16 +21,22 @@ namespace Scripts.Enemy.Attack
             mono = _mono;
         }
 
-        public void Attack()
+        public void StartAttacking()
         {
-            mono.StartCoroutine(EnemyAttackLogic());
+            mono.StartCoroutine(EnemyAttackCor());
         }
 
-        private IEnumerator EnemyAttackLogic()
+
+        public void StopAttacking()
+        {
+            mono.StopCoroutine(EnemyAttackCor());
+        }
+
+        private IEnumerator EnemyAttackCor()
         {
             while (true)
             {
-                Collider[] hits = Physics.OverlapBox(transform.position, transform.localScale, Quaternion.identity, 1 << playerLayer);
+                Collider[] hits = Physics.OverlapBox(transform.position, transform.localScale * 1.2f, Quaternion.identity, 1 << playerLayer);
                 foreach (var hit in hits)
                 {
                     playerSettings.Health = playerSettings.Health - enemySettings.Damage * playerSettings.Defence;

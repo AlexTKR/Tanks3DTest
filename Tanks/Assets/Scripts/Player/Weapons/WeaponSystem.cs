@@ -14,7 +14,6 @@ namespace Scripts.Player.Weapons
 
         public override void NextWeapon()
         {
-            Debug.Log("Next");
             currentWeapon.Value.Disable();
 
             if (currentWeapon.Next != null)

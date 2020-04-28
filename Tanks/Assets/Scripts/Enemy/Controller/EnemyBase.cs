@@ -18,5 +18,6 @@ namespace Scripts.Enemy.Controller
 
         public abstract void ReturnToThePool();
         public abstract void Initiate();
+        public abstract void RestoreEnemy();
     }
 }

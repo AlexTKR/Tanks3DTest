@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System;
 using Scripts.Enemy.Movement;
 using Scripts.Enemy.Attack;
 using Scripts.Enemy.Damage;
@@ -20,9 +21,16 @@ namespace Scripts.Enemy.Controller
         private IAttack enemyAttack;
         private IListener healthListener;
 
+        private Action onEnemyDeth;
+
         public void TakeDamage(float damage)
         {
             enemySettingsCopy.Health = enemySettingsCopy.Health - damage * enemySettingsCopy.Defence;
+
+            if (enemySettingsCopy.Health <= 0)
+            {
+                onEnemyDeth?.Invoke();
+            }
         }
 
         public override void Initiate()
@@ -32,10 +40,15 @@ namespace Scripts.Enemy.Controller
 
         public override void ReturnToThePool()
         {
+            enemyAttack.StopAttacking();            
             gameObject.SetActive(false);
-            gameObject.transform.SetParent(null);
-            InitiateSettings();
             enemyPool.SetInstance(this);
+        }
+
+        public override void RestoreEnemy()
+        {
+            enemySettingsCopy.Health = enemySettings.Health;
+            enemyAttack.StartAttacking();
         }
 
         private void Awake()
@@ -50,7 +63,6 @@ namespace Scripts.Enemy.Controller
         private void Update()
         {
             enemyMovement.Tick();
-            healthListener.Tick();
         }
 
         private void LateUpdate()
@@ -78,12 +90,14 @@ namespace Scripts.Enemy.Controller
         private void InitiateAttack()
         {
             enemyAttack = new EnemyAttack(playerSettings, enemySettingsCopy ,transform, this);
-            enemyAttack.Attack();
+            enemyAttack.StartAttacking();
         }
 
         private void InitiateHealthListener()
         {
             healthListener = new HealthListener.HealthListener(enemySettingsCopy, this);
+
+            onEnemyDeth += healthListener.Listen;
         }
 
         private void InitiateEnemiesHealth()

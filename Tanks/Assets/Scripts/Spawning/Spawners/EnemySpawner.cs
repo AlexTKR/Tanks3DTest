@@ -16,13 +16,13 @@ namespace Scripts.Spawning
 
         private int maxEnemyCount = 10;
 
-        public EnemySpawner(GenericPool<EnemyBase> _enemyPool, List<Transform> _spawnPos, Transform _enemyHolder ,MonoBehaviour _mono , EnemyBase[] _enemies)
+        public EnemySpawner(GenericPool<EnemyBase> _enemyPool, List<Transform> _spawnPos, Transform _enemyHolder, MonoBehaviour _mono, EnemyBase[] _enemies)
         {
             enemyPool = _enemyPool;
             spawnPos = _spawnPos;
             enemies = _enemies;
             mono = _mono;
-            enemyHolder = _enemyHolder; 
+            enemyHolder = _enemyHolder;
 
             PrespawnEnemies();
         }
@@ -37,6 +37,7 @@ namespace Scripts.Spawning
             for (int i = 0; i < maxEnemyCount; i++)
             {
                 EnemyBase enemy = MonoBehaviour.Instantiate(enemies[Random.Range(0, enemies.Length)]);
+                enemy.InjectPool(enemyPool);
                 enemy.gameObject.SetActive(false);
                 enemyPool.SetInstance(enemy);
             }
@@ -46,14 +47,16 @@ namespace Scripts.Spawning
         {
             while (true)
             {
-                if (enemyHolder.childCount < maxEnemyCount && !enemyPool.IsPoolEmpty())
+                if (!enemyPool.IsPoolEmpty())
                 {
                     EnemyBase enemy = enemyPool.GetInctance();
+                    Debug.Log(enemyPool.IsPoolEmpty());
                     enemy.transform.position = spawnPos[Random.Range(0, spawnPos.Count)].position;
-                    enemy.transform.SetParent(enemyHolder);
                     enemy.gameObject.SetActive(true);
+                    enemy.RestoreEnemy();
+                    yield return null;
                 }
-                yield return null;
+                yield return new WaitForSeconds(1f);
             }
         }
     }
