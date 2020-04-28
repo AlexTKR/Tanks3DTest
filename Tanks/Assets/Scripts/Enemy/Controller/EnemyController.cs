@@ -3,6 +3,8 @@ using UnityEngine.AI;
 using Scripts.Enemy.Movement;
 using Scripts.Enemy.Attack;
 using Scripts.Enemy.Damage;
+using Scripts.Enemy.HealthListener;
+using Scripts.Enemy.HealthSystem;
 using Scripts.Settings;
 
 namespace Scripts.Enemy.Controller
@@ -12,25 +14,48 @@ namespace Scripts.Enemy.Controller
         [SerializeField] private PlayerSettings playerSettings;
         [SerializeField] private NavMeshAgent agent;
         [SerializeField] private PositionHolder targetPosition;
+        [SerializeField] private HealthSystemBase enemiesHealh;
 
         private IMovement enemyMovement;
         private IAttack enemyAttack;
+        private IListener healthListener;
+
+        public void TakeDamage(float damage)
+        {
+            enemySettingsCopy.Health = enemySettingsCopy.Health - damage * enemySettingsCopy.Defence;
+        }
+
+        public override void Initiate()
+        {
+            InitiateSettings();
+        }
+
+        public override void ReturnToThePool()
+        {
+            gameObject.SetActive(false);
+            gameObject.transform.SetParent(null);
+            InitiateSettings();
+            enemyPool.SetInstance(this);
+        }
 
         private void Awake()
-        {
+        {            
             InitiateSettings();
             InitiateMovement();
             InitiateAttack();
+            InitiateHealthListener();
+            InitiateEnemiesHealth();
         }
 
         private void Update()
         {
             enemyMovement.Tick();
+            healthListener.Tick();
         }
 
-        public void TakeDamage(float damage)
+        private void LateUpdate()
         {
-            enemySettingsCopy.Health = enemySettingsCopy.Health - damage * enemySettingsCopy.Defence;
+            enemiesHealh.Tick();
         }
 
         private void InitiateSettings()
@@ -39,20 +64,33 @@ namespace Scripts.Enemy.Controller
             enemySettingsCopy.Health = enemySettings.Health;
             enemySettingsCopy.Defence = enemySettings.Defence;
             enemySettingsCopy.MovingSpeed = enemySettings.MovingSpeed;
+            enemySettingsCopy.Damage = enemySettings.Damage;
         }
 
 
         private void InitiateMovement()
         {
-            enemyMovement = new EnemyMovement(enemySettings, targetPosition, transform, agent);
+            enemyMovement = new EnemyMovement(enemySettingsCopy, targetPosition, transform, agent);
+
+            agent.speed = enemySettingsCopy.MovingSpeed;
         }
 
         private void InitiateAttack()
         {
-            enemyAttack = new EnemyAttack(playerSettings, transform, this);
+            enemyAttack = new EnemyAttack(playerSettings, enemySettingsCopy ,transform, this);
             enemyAttack.Attack();
-        }        
-    }
+        }
 
+        private void InitiateHealthListener()
+        {
+            healthListener = new HealthListener.HealthListener(enemySettingsCopy, this);
+        }
+
+        private void InitiateEnemiesHealth()
+        {
+            enemiesHealh.SetSettings(enemySettingsCopy);
+            enemiesHealh.Initiate();
+        }
+    }
 }
 

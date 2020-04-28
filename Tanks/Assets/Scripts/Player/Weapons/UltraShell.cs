@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace Scripts.Player.Weapons
 {
-    public class SimpleShell : ShellBase
+    public class UltraShell : ShellBase
     {
         [SerializeField] private Rigidbody rb;
 

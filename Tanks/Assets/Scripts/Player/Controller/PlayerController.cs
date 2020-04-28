@@ -13,7 +13,7 @@ namespace Scripts.Player.Controller
         [SerializeField] private PlayerSettings playerSettings;
         [SerializeField] private PositionHolder positionHolder;
         [SerializeField] private WeaponSystemBase weaponSystem;
-        [SerializeField] private healthSystemBase playersHealth;
+        [SerializeField] private HealthSystemBase playersHealth;
 
         private IInputReader inputReader;
         private IMovement playerMovement;
@@ -21,7 +21,7 @@ namespace Scripts.Player.Controller
       
         private void Awake()
         {
-            playersHealth.Initiate();
+            InitiatePlayersHealth();
             InitiateInputReader();
             InitiatePlayerMovement();
             InitiateAttack();
@@ -63,5 +63,9 @@ namespace Scripts.Player.Controller
             playerAttack.InitiateAttack();
         }
 
+        private void InitiatePlayersHealth()
+        {
+            playersHealth.Initiate();
+        }
     }
 }

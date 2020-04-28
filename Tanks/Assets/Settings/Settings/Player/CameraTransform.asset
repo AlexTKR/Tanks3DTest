@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7c5e5af3267254db0f1a22cd2f6d9c, type: 3}
-  m_Name: CameraOffsetHolder
+  m_Script: {fileID: 11500000, guid: c6a41015c464bbc44a3373300216abb3, type: 3}
+  m_Name: CameraTransform
   m_EditorClassIdentifier: 
-  value: {x: 0, y: 0, z: -15}

@@ -3,7 +3,7 @@ using Scripts.Settings;
 
 namespace Scripts.Player.HealthSystem
 {
-    public class PlayersHealth : healthSystemBase
+    public class PlayersHealth : HealthSystemBase
     {
         [SerializeField] private PlayerSettings playerSettings;
 
@@ -14,7 +14,7 @@ namespace Scripts.Player.HealthSystem
 
         public override void Tick()
         {
-            healthSlider.value = Mathf.Clamp(playerSettings.Health, 0, healthSlider.maxValue);
+            healthSlider.value = Mathf.Clamp(playerSettings.Health, 0, healthSlider.maxValue);            
         }
     }
 }

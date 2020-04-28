@@ -22,7 +22,7 @@ namespace Scripts.Player.InputReaders
             horizontalValue = Input.GetAxis("Horizontal");
             verticalValue = Input.GetAxis("Vertical");
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 onNextWeapon?.Invoke();
             }

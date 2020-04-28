@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5f53702dabe6a4e83f1448f32c1526, type: 3}
   m_Name: GreenEnemySettings
   m_EditorClassIdentifier: 
-  health: 0
-  defence: 0
+  health: 500
+  damage: 10
+  defence: 0.5
   movingSpeed: 0
-  stoppingDistance: 0

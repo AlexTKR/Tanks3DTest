@@ -7,14 +7,16 @@ namespace Scripts.Enemy.Attack
     public class EnemyAttack : IAttack
     {
         private PlayerSettings playerSettings;
+        private EnemySettings enemySettings;
         private Transform transform;
         private MonoBehaviour mono;
-        private float AttackRadious = 8f;
         private int playerLayer = 9;
+        private float attackCoolDown = 2f;
 
-        public EnemyAttack(PlayerSettings _playerSettings, Transform _transform, MonoBehaviour _mono)
+        public EnemyAttack(PlayerSettings _playerSettings, EnemySettings _enemySettings ,Transform _transform, MonoBehaviour _mono)
         {
             playerSettings = _playerSettings;
+            enemySettings = _enemySettings;
             transform = _transform;
             mono = _mono;
         }
@@ -29,14 +31,14 @@ namespace Scripts.Enemy.Attack
             while (true)
             {
                 Collider[] hits = Physics.OverlapBox(transform.position, transform.localScale, Quaternion.identity, 1 << playerLayer);
-
                 foreach (var hit in hits)
                 {
-                    Debug.Log(hit.name);
+                    playerSettings.Health = playerSettings.Health - enemySettings.Damage * playerSettings.Defence;
                     yield return null;
+                    Debug.Log(playerSettings.Health);
                 }
 
-                yield return null;
+                yield return new WaitForSeconds(attackCoolDown);
             }
         }       
     }

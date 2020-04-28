@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 635419256271692198}
   - component: {fileID: 8685815454790227532}
   - component: {fileID: 7466757892977291085}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GreenEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.85, y: 1, z: 0.46396986}
+  m_Center: {x: 0, y: 0, z: 0.10301516}
 --- !u!195 &8685815454790227532
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   playerSettings: {fileID: 11400000, guid: 13d5a8f3973ec0e4fb31b8764a9560d5, type: 2}
   agent: {fileID: 8685815454790227532}
   targetPosition: {fileID: 11400000, guid: d178831178b3f574abdab35e9cf8b1cb, type: 2}
+  enemiesHealh: {fileID: 1182385995}
 --- !u!1 &866089387845685981
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +146,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4310575936047702158}
   - component: {fileID: 2227752167318595633}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +232,7 @@ GameObject:
   - component: {fileID: 477827237159083090}
   - component: {fileID: 8928562861180908331}
   - component: {fileID: 6156366522613818703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +305,7 @@ GameObject:
   - component: {fileID: 4112680142933959902}
   - component: {fileID: 8690619391143217806}
   - component: {fileID: 6124002944819697061}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +395,7 @@ GameObject:
   - component: {fileID: 1340567410753889463}
   - component: {fileID: 458659455510650611}
   - component: {fileID: 8790106020218810254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BGImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,8 +468,8 @@ GameObject:
   - component: {fileID: 1884004036587852141}
   - component: {fileID: 1919189590437357675}
   - component: {fileID: 1345757550421106589}
-  - component: {fileID: 2461782648855842904}
-  m_Layer: 0
+  - component: {fileID: 1182385995}
+  m_Layer: 10
   m_Name: HealthCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2461782648855842904
+--- !u!114 &1182385995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,11 +565,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4412288397497774771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fc83328971f6940b9a1710ba864d9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 276641f3167a59f4db1408fccfcb3113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 2227752167318595633}
-  playerSettings: {fileID: 11400000, guid: 13d5a8f3973ec0e4fb31b8764a9560d5, type: 2}
 --- !u!1 &5847965465030873748
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4296664794831913441}
   - component: {fileID: 3348126547941254771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolderPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 2928084049785880439}
   - component: {fileID: 1060813888766055328}
   - component: {fileID: 6527052610660084141}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 573251974295933096}
   - component: {fileID: 3614220233992271125}
   - component: {fileID: 2532919139012757214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}

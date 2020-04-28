@@ -24,7 +24,10 @@ namespace Scripts.Pool
 
         public void SetInstance(T instance)
         {
-            objects.Enqueue(instance);
+            if (!objects.Contains(instance))
+            {
+                objects.Enqueue(instance);
+            }
         }
     }
 }

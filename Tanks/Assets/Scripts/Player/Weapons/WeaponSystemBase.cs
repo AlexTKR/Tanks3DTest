@@ -7,8 +7,8 @@ namespace Scripts.Player.Weapons
     {
         [SerializeField] private List<WeaponBase> weaponHolder;
 
-        private LinkedList<WeaponBase> weapons;
-        private LinkedListNode<WeaponBase> currentWeapon;
+        protected LinkedList<WeaponBase> weapons;
+        protected LinkedListNode<WeaponBase> currentWeapon;
 
         public void InitiateWeapons()
         {
@@ -21,24 +21,11 @@ namespace Scripts.Player.Weapons
             }
 
             currentWeapon = weapons.First;
+            currentWeapon.Value.Enable();
         }
 
-        public void NextWeapon()
-        {
-
-        }
-
-        public void PrevWeapon()
-        {
-
-        }
-
-        public void Attack()
-        {
-            if (currentWeapon.Value != null)
-            {
-                currentWeapon.Value.Attack();
-            }
-        }
+        public abstract void NextWeapon();
+        public abstract void PrevWeapon();
+        public abstract void Attack();        
     }
 }
