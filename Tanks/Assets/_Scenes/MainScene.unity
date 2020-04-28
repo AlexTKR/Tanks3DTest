@@ -1380,18 +1380,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122325947}
   m_Mesh: {fileID: 4300000, guid: 12783825d19a606449c1d81b822fb4a2, type: 3}
---- !u!114 &586821915266546770 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 33404612281698143, guid: ac5a83f77a4495a4a9c9b1ab8d20a59f,
-    type: 3}
-  m_PrefabInstance: {fileID: 599649716087126797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &599649716087126797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1399,11 +1387,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8348696510961236580, guid: ac5a83f77a4495a4a9c9b1ab8d20a59f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8348696511141626578, guid: ac5a83f77a4495a4a9c9b1ab8d20a59f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1523,6 +1506,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404707860700715703, guid: ac5a83f77a4495a4a9c9b1ab8d20a59f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.5999756
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac5a83f77a4495a4a9c9b1ab8d20a59f, type: 3}
@@ -2202,7 +2190,7 @@ PrefabInstance:
         type: 3}
       propertyPath: reStartButton
       value: 
-      objectReference: {fileID: 586821915266546770}
+      objectReference: {fileID: 0}
     - target: {fileID: 5578092331252577954, guid: 4a35912948e77c043a7a65c07de853fd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2363,38 +2351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7722613895878277098, guid: 43d9733753cbd574fb98419f88006ac1,
-        type: 3}
-      propertyPath: enemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722613895878277098, guid: 43d9733753cbd574fb98419f88006ac1,
-        type: 3}
-      propertyPath: enemies.Array.data[0]
-      value: 
-      objectReference: {fileID: 7466757892977291085, guid: 918983407d158fb42a4cf9f1b5434c52,
-        type: 3}
-    - target: {fileID: 7722613895878277098, guid: 43d9733753cbd574fb98419f88006ac1,
-        type: 3}
-      propertyPath: enemies.Array.data[1]
-      value: 
-      objectReference: {fileID: 635820881918133483, guid: 5fc8f6fcb607c964daaffa76d4e26fc2,
-        type: 3}
-    - target: {fileID: 7722613895878277098, guid: 43d9733753cbd574fb98419f88006ac1,
-        type: 3}
-      propertyPath: enemies.Array.data[2]
-      value: 
-      objectReference: {fileID: 812818531160025545, guid: cb030b5e8424c154780d037685f19a44,
-        type: 3}
     - target: {fileID: 7722613897008147130, guid: 43d9733753cbd574fb98419f88006ac1,
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 7722613897008147130, guid: 43d9733753cbd574fb98419f88006ac1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7722613897008147131, guid: 43d9733753cbd574fb98419f88006ac1,
         type: 3}
@@ -2540,7 +2500,7 @@ PrefabInstance:
     - target: {fileID: 8364235506182320845, guid: 1f60cd7f2f786d6469f0a578aed3f1c8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -55.625275
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8364235506182320845, guid: 1f60cd7f2f786d6469f0a578aed3f1c8,
         type: 3}
@@ -2550,7 +2510,7 @@ PrefabInstance:
     - target: {fileID: 8364235506182320845, guid: 1f60cd7f2f786d6469f0a578aed3f1c8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.00065
+      value: -22.2
       objectReference: {fileID: 0}
     - target: {fileID: 8364235506182320845, guid: 1f60cd7f2f786d6469f0a578aed3f1c8,
         type: 3}

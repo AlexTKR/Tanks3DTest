@@ -9,19 +9,8 @@ namespace Scripts.GameManager
     {
         [SerializeField] private Canvas canvas;
         [SerializeField] private PlayerSettings playerSettings; 
-        [SerializeField] private Button reStartButton;
 
         private bool canTick = true;
-
-        private void OnEnable()
-        {
-            reStartButton.onClick.AddListener(RestartGame);
-        }
-
-        private void OnDisable()
-        {
-            reStartButton.onClick.RemoveAllListeners();
-        }
 
         private void Update()
         {
@@ -35,17 +24,17 @@ namespace Scripts.GameManager
                 canTick = false;
                 GameOver();
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
         }
 
         private void GameOver()
         {
             Time.timeScale = 0;
             canvas.gameObject.SetActive(true);
-        }
-
-        private void RestartGame()
-        {
-            SceneManager.UnloadSceneAsync(0);
         }
     }
 }

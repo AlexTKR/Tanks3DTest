@@ -15,4 +15,4 @@ MonoBehaviour:
   health: 50
   damage: 10
   defence: 0.8
-  movingSpeed: 8
+  movingSpeed: 9
