@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   health: 350
-  defence: 0.1
+  defence: 0.9
   movingSpeed: 10
   turningSpeed: 100

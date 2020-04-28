@@ -50,7 +50,6 @@ namespace Scripts.Spawning
                 if (!enemyPool.IsPoolEmpty())
                 {
                     EnemyBase enemy = enemyPool.GetInctance();
-                    Debug.Log(enemyPool.IsPoolEmpty());
                     enemy.transform.position = spawnPos[Random.Range(0, spawnPos.Count)].position;
                     enemy.gameObject.SetActive(true);
                     enemy.RestoreEnemy();
